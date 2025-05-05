@@ -6,30 +6,49 @@
     <title>Claude-Clone - Free Unlimited Access to Claude AI</title>
     <style>
         :root {
-            --claude-primary: #3a4c6d;
-            --claude-secondary: #4a5d7e;
-            --claude-accent: #5b6d8e;
-            --claude-light: #e8f0fe;
-            --claude-text: #2d3748;
-            --claude-text-light: #4a5568;
+            --primary: #FF8C42;
+            --primary-light: #FFA566;
+            --primary-dark: #E67329;
+            --secondary: #FFB347;
+            --text: #2d3748;
+            --text-light: #4a5568;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --shadow: rgba(0,0,0,0.1);
+            --icon-bg: #FFF4E8;
+        }
+
+        [data-theme="dark"] {
+            --primary: #FF8C42;
+            --primary-light: #FFA566;
+            --primary-dark: #E67329;
+            --secondary: #FFB347;
+            --text: #e2e8f0;
+            --text-light: #cbd5e0;
+            --bg: #1a202c;
+            --card-bg: #2d3748;
+            --shadow: rgba(0,0,0,0.3);
+            --icon-bg: #4A3C31;
         }
         
         body {
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8fafc;
-            color: var(--claude-text);
+            background-color: var(--bg);
+            color: var(--text);
             line-height: 1.6;
+            transition: all 0.3s ease;
         }
         
         .navbar {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px var(--shadow);
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: all 0.3s ease;
         }
         
         .logo {
@@ -41,7 +60,7 @@
         .logo-icon {
             width: 32px;
             height: 32px;
-            background-color: var(--claude-primary);
+            background-color: var(--primary);
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -53,11 +72,11 @@
         .logo-text {
             font-weight: 600;
             font-size: 1.25rem;
-            color: var(--claude-primary);
+            color: var(--primary);
         }
         
         .cta-button {
-            background-color: var(--claude-primary);
+            background-color: var(--primary);
             color: white;
             border: none;
             padding: 0.75rem 1.5rem;
@@ -68,7 +87,7 @@
         }
         
         .cta-button:hover {
-            background-color: var(--claude-secondary);
+            background-color: var(--primary-dark);
             transform: translateY(-2px);
         }
         
@@ -85,23 +104,23 @@
         .hero h1 {
             font-size: 3rem;
             font-weight: 700;
-            color: var(--claude-primary);
+            color: var(--primary);
             margin-bottom: 1rem;
             line-height: 1.2;
         }
         
         .hero p {
             font-size: 1.25rem;
-            color: var(--claude-text-light);
+            color: var(--text-light);
             max-width: 700px;
             margin-bottom: 2rem;
         }
         
         .highlight {
-            background-color: var(--claude-light);
+            background-color: var(--icon-bg);
             padding: 0.25rem 0.5rem;
             border-radius: 4px;
-            color: var(--claude-primary);
+            color: var(--primary);
             font-weight: 500;
         }
         
@@ -115,10 +134,10 @@
         }
         
         .feature-card {
-            background-color: white;
+            background-color: var(--card-bg);
             border-radius: 12px;
             padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px var(--shadow);
             transition: transform 0.3s;
         }
         
@@ -129,30 +148,31 @@
         .feature-icon {
             width: 48px;
             height: 48px;
-            background-color: var(--claude-light);
+            background-color: var(--icon-bg);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
-            color: var(--claude-primary);
+            color: var(--primary);
             font-size: 1.5rem;
         }
         
         .feature-card h3 {
-            color: var(--claude-primary);
+            color: var(--primary);
             margin-bottom: 0.75rem;
         }
         
         .feature-card p {
-            color: var(--claude-text-light);
+            color: var(--text-light);
         }
         
         .footer {
-            background-color: white;
+            background-color: var(--card-bg);
             padding: 3rem 2rem;
             text-align: center;
-            color: var(--claude-text-light);
+            color: var(--text-light);
+            transition: all 0.3s ease;
         }
         
         .footer-links {
@@ -163,12 +183,13 @@
         }
         
         .footer-link {
-            color: var(--claude-text-light);
+            color: var(--text-light);
             text-decoration: none;
+            transition: color 0.2s;
         }
         
         .footer-link:hover {
-            color: var(--claude-primary);
+            color: var(--primary);
         }
         
         .chat-preview {
@@ -177,7 +198,26 @@
             margin: 3rem auto;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+        
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-left: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .theme-toggle:hover {
+            color: var(--primary);
+        }
+        
+        .nav-right {
+            display: flex;
+            align-items: center;
         }
         
         @media (max-width: 768px) {
@@ -197,7 +237,10 @@
             <div class="logo-icon">C</div>
             <div class="logo-text">Claude-Clone</div>
         </div>
-        <a href="https://claude-clone-app.vercel.app" class="cta-button">Try for Free</a>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle">🌓</button>
+            <a href="https://claude-clone-app.vercel.app" class="cta-button">Try for Free</a>
+        </div>
     </nav>
     
     <section class="hero">
@@ -246,5 +289,35 @@
         <div>© 2025 Claude-Clone. Not affiliated with Anthropic.</div>
         <div style="margin-top: 1rem; font-size: 0.9rem;">Created by @Nightdart from YouTube</div>
     </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        const currentTheme = localStorage.getItem('theme');
+        
+        // Set initial theme
+        if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeToggle.textContent = '☀️';
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            themeToggle.textContent = '🌙';
+        }
+        
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeToggle.textContent = '🌙';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.textContent = '☀️';
+            }
+        });
+    </script>
 </body>
 </html>
