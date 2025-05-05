@@ -1,1 +1,250 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude-Clone - Free Unlimited Access to Claude AI</title>
+    <style>
+        :root {
+            --claude-primary: #3a4c6d;
+            --claude-secondary: #4a5d7e;
+            --claude-accent: #5b6d8e;
+            --claude-light: #e8f0fe;
+            --claude-text: #2d3748;
+            --claude-text-light: #4a5568;
+        }
+        
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8fafc;
+            color: var(--claude-text);
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background-color: var(--claude-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .logo-text {
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: var(--claude-primary);
+        }
+        
+        .cta-button {
+            background-color: var(--claude-primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--claude-secondary);
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--claude-primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--claude-text-light);
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+        
+        .highlight {
+            background-color: var(--claude-light);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            color: var(--claude-primary);
+            font-weight: 500;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--claude-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: var(--claude-primary);
+            font-size: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            color: var(--claude-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .feature-card p {
+            color: var(--claude-text-light);
+        }
+        
+        .footer {
+            background-color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--claude-text-light);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-link {
+            color: var(--claude-text-light);
+            text-decoration: none;
+        }
+        
+        .footer-link:hover {
+            color: var(--claude-primary);
+        }
+        
+        .chat-preview {
+            width: 100%;
+            max-width: 800px;
+            margin: 3rem auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">C</div>
+            <div class="logo-text">Claude-Clone</div>
+        </div>
+        <a href="https://claude-clone.loveable.app" class="cta-button">Try for Free</a>
+    </nav>
+    
+    <section class="hero">
+        <h1>Experience Claude AI <span class="highlight">Unlimited & Free</span></h1>
+        <p>The perfect clone of Claude desktop and mobile app with free access to Claude 3.7 Sonnet and Claude 3.5 Sonnet. No restrictions, no paywalls.</p>
+        <a href="https://claude-clone.loveable.app" class="cta-button" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Start Chatting Now</a>
+        
+        <div class="chat-preview">
+            <img src="ccp.png" alt="Claude-Clone Chat Preview" style="width: 100%; display: block;">
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>Latest Models</h3>
+            <p>Access Claude 3.7 Sonnet and Claude 3.5 Sonnet with the same capabilities as the official app.</p>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">🔓</div>
+            <h3>No Restrictions</h3>
+            <p>Complete free access with no usage limits or paywalls. Enjoy Claude without constraints.</p>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">💻</div>
+            <h3>Cross-Platform</h3>
+            <p>Works seamlessly on both desktop and mobile devices with a familiar interface.</p>
+        </div>
+    </section>
+    
+    <section class="hero" style="margin-top: 4rem;">
+        <h2>Ready to experience Claude for free?</h2>
+        <p style="margin-bottom: 2.5rem;">Get unlimited access to Claude's powerful AI today.</p>
+        <a href="https://claude-clone.loveable.app" class="cta-button" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Get Started Now</a>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#" class="footer-link">Privacy</a>
+            <a href="#" class="footer-link">Terms</a>
+            <a href="https://github.com/Nightdart" class="footer-link">Developer</a>
+            <a href="https://puter.js.org" class="footer-link">Powered by Puter.js</a>
+        </div>
+        <div>© 2025 Claude-Clone. Not affiliated with Anthropic.</div>
+        <div style="margin-top: 1rem; font-size: 0.9rem;">Created by @Nightdart from YouTube</div>
+    </footer>
+</body>
+</html>
